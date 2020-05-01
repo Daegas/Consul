@@ -31,10 +31,10 @@ CREATE TABLE `Medicamentos` (
   `DosisMG` varchar(20) DEFAULT 'POR ASIGNAR',
   `Laboratorio` varchar(20) DEFAULT 'POR ASIGNAR',
   `Proveedor` varchar(20) DEFAULT 'POR ASIGNAR',
-  `P_Proveedor` decimal(5,3) NOT NULL DEFAULT -1.000,
-  `P_Publico` decimal(5,3) NOT NULL DEFAULT -1.000,
+  `P_Proveedor` decimal(7,2) NOT NULL DEFAULT -1.00,
+  `P_Publico` decimal(7,2) NOT NULL DEFAULT -1.00,
   `Descuento` decimal(3,2) DEFAULT -1.00,
-  `P_Descuento` decimal(5,3) DEFAULT -1.000,
+  `P_Descuento` decimal(7,2) NOT NULL DEFAULT -1.00,
   `Saldo` int(11) DEFAULT -1,
   `Caducidad` date DEFAULT '0000-00-00',
   `Imagen` blob DEFAULT 'POR ASIGNAR',
@@ -60,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-01 11:54:47
+-- Dump completed on 2020-05-01 12:33:52
