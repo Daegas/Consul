@@ -24,19 +24,20 @@ DROP TABLE IF EXISTS `Medicamentos`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Medicamentos` (
   `MedicamentoID` int(11) NOT NULL AUTO_INCREMENT,
-  `SustanciaActiva` varchar(50) NOT NULL,
-  `Nombre` varchar(50) NOT NULL,
-  `Presentacion` varchar(20) NOT NULL,
-  `Gramaje` varchar(20) DEFAULT NULL,
-  `DosisMG` varchar(20) DEFAULT NULL,
-  `Laboratorio` varchar(20) DEFAULT NULL,
-  `Proveedor` varchar(20) DEFAULT NULL,
-  `P_Proveedor` decimal(5,3) NOT NULL,
-  `P_Publico` decimal(5,3) NOT NULL,
-  `Descuento` decimal(3,2) DEFAULT NULL,
-  `P_Descuento` decimal(5,3) DEFAULT NULL,
-  `Saldo` int(11) DEFAULT NULL,
-  `Caducidad` date DEFAULT NULL,
+  `SustanciaActiva` varchar(50) NOT NULL DEFAULT 'POR ASIGNAR',
+  `Nombre` varchar(50) NOT NULL DEFAULT 'POR ASIGNAR',
+  `Presentacion` varchar(20) NOT NULL DEFAULT 'POR ASIGNAR',
+  `Gramaje` varchar(20) DEFAULT 'POR ASIGNAR',
+  `DosisMG` varchar(20) DEFAULT 'POR ASIGNAR',
+  `Laboratorio` varchar(20) DEFAULT 'POR ASIGNAR',
+  `Proveedor` varchar(20) DEFAULT 'POR ASIGNAR',
+  `P_Proveedor` decimal(5,3) NOT NULL DEFAULT -1.000,
+  `P_Publico` decimal(5,3) NOT NULL DEFAULT -1.000,
+  `Descuento` decimal(3,2) DEFAULT -1.00,
+  `P_Descuento` decimal(5,3) DEFAULT -1.000,
+  `Saldo` int(11) DEFAULT -1,
+  `Caducidad` date DEFAULT '0000-00-00',
+  `Imagen` blob DEFAULT 'POR ASIGNAR',
   PRIMARY KEY (`MedicamentoID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -59,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-24 14:29:41
+-- Dump completed on 2020-05-01 11:54:47
