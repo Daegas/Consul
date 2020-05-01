@@ -35,7 +35,7 @@ CREATE TABLE `Medicamentos` (
   `P_Publico` decimal(7,2) NOT NULL DEFAULT -1.00,
   `Descuento` decimal(3,2) DEFAULT -1.00,
   `P_Descuento` decimal(7,2) NOT NULL DEFAULT -1.00,
-  `Saldo` int(11) DEFAULT -1,
+  `Saldo` int(11) NOT NULL DEFAULT -1,
   `Caducidad` date DEFAULT '0000-00-00',
   `Imagen` blob DEFAULT 'POR ASIGNAR',
   PRIMARY KEY (`MedicamentoID`)
@@ -61,4 +61,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-01 13:06:52
+-- Dump completed on 2020-05-01 13:12:11
