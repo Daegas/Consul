@@ -1,11 +1,11 @@
 {
-    "title": "SB Admin 2",
-    "name": "startbootstrap-sb-admin-2",
+    "title": "ConsultorioGama",
+    "name": "consul_gama",
     "version": "4.0.7",
     "scripts": {
         "start": "node_modules/.bin/gulp watch"
     },
-    "description": "An open source Bootstrap 4 admin theme.",
+    "description": "Small Clinic Admin Page ",
     "keywords": [
         "css",
         "sass",
@@ -14,7 +14,9 @@
         "theme",
         "template",
         "admin",
-        "app"
+        "app",
+        "consultorio",
+        "clinic"
     ],
     "homepage": "https://startbootstrap.com/template-overviews/sb-admin-2",
     "bugs": {

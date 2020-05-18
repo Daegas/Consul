@@ -117,6 +117,7 @@
 
     .sidebar-brand-icon i {
       font-size: 2rem;
+      color: $verde-pis;
     }
     .sidebar-brand-text {
       display: none;
@@ -193,6 +194,7 @@
     .sidebar-brand {
       .sidebar-brand-icon i {
         font-size: 2rem;
+        color: $verde-pis
       }
       .sidebar-brand-text {
         display: inline;
@@ -250,6 +252,7 @@
       .sidebar-brand {
         .sidebar-brand-icon i {
           font-size: 2rem;
+          color: $verde-pis;
         }
         .sidebar-brand-text {
           display: none;
@@ -361,7 +364,7 @@
       color: fade-out($white, 0.5);
     }
     &:hover {
-      background-color: fade-out($white, 0.75);
+      background-color: fade-out($primary, 0.2);
     }
   }
   &.toggled {

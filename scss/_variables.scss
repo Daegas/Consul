@@ -15,7 +15,6 @@ $gray-700: #6e707e !default;
 $gray-800: #5a5c69 !default;
 $gray-900: #3a3b45 !default;
 $black: #000 !default;
-
 $blue: #4e73df !default;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
@@ -27,9 +26,19 @@ $green: #1cc88a !default;
 $teal: #20c9a6 !default;
 $cyan: #36b9cc !default;
 
-// Custom Colors
+// Brand Colors
 $brand-google: #ea4335;
 $brand-facebook: #3b5998;
+
+//Custum
+$verde-cla: #7DF229 !default;
+$verde-obs: #44AA00 !default;
+$verde-pis: #C0DE00 !default;
+$verde-pis2: rgb(169, 194, 4) !default;
+$obscuro: #333333 !default;
+
+$primary: $verde-pis !default;
+$secondary : $verde-obs !default;
 
 // Set Contrast Threshold
 $yiq-contrasted-threshold: 195 !default;
@@ -56,9 +65,9 @@ $border-color: darken($gray-200, 2%);
 // Change below variable if the height of the navbar changes
 $topbar-base-height: 4.375rem;
 // Change below variable to change the width of the sidenav
-$sidebar-base-width: 14rem;
+$sidebar-base-width: 12rem;
 // Change below variable to change the width of the sidenav when collapsed
-$sidebar-collapsed-width: 6.5rem;
+$sidebar-collapsed-width: 5rem;
 
 // Card
 $card-cap-bg: $gray-100;

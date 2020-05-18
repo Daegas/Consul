@@ -50,7 +50,7 @@
     border: none;
     overflow: hidden;
     .dropdown-header {
-      background-color: $primary;
+      background-color: $verde-cla;
       border: 1px solid $primary;
       padding-top: 0.75rem;
       padding-bottom: 0.75rem;
@@ -73,7 +73,7 @@
           width: 2.5rem;
         }
         .status-indicator {
-          background-color: $gray-200;
+          background-color: $gray-300;
           height: 0.75rem;
           width: 0.75rem;
           border-radius: 100%;
@@ -117,7 +117,7 @@
   .navbar-nav {
     .nav-item {
       .nav-link {
-        color: $gray-400;
+        color: $gray-300;
         &:hover {
           color: $gray-500;
         }
