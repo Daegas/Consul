@@ -46,4 +46,9 @@
     e.preventDefault();
   });
 
+  //Load Htmls
+  $( "#load-side" ).load( "../side.html");
+  $( "#load-top" ).load( "../top.html");
+  $( "#load-inventario" ).load( "../inventario.html");
+
 })(jQuery); // End of use strict
