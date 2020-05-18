@@ -1,5 +1,3 @@
-"use strict";
-
 // Load plugins
 const autoprefixer = require("gulp-autoprefixer");
 const browsersync = require("browser-sync").create();
@@ -44,46 +42,46 @@ function browserSyncReload(done) {
 
 // Clean vendor
 function clean() {
-  return del(["./vendor/"]);
+  return del(["./src/vendor/"]);
 }
 
 // Bring third party dependencies from node_modules into vendor directory
 function modules() {
   // Bootstrap JS
   var bootstrapJS = gulp.src('./node_modules/bootstrap/dist/js/*')
-    .pipe(gulp.dest('./vendor/bootstrap/js'));
+    .pipe(gulp.dest('./src/vendor/bootstrap/js'));
   // Bootstrap SCSS
   var bootstrapSCSS = gulp.src('./node_modules/bootstrap/scss/**/*')
-    .pipe(gulp.dest('./vendor/bootstrap/scss'));
+    .pipe(gulp.dest('./src/vendor/bootstrap/scss'));
   // ChartJS
   var chartJS = gulp.src('./node_modules/chart.js/dist/*.js')
-    .pipe(gulp.dest('./vendor/chart.js'));
+    .pipe(gulp.dest('./src/vendor/chart.js'));
   // dataTables
   var dataTables = gulp.src([
       './node_modules/datatables.net/js/*.js',
       './node_modules/datatables.net-bs4/js/*.js',
       './node_modules/datatables.net-bs4/css/*.css'
     ])
-    .pipe(gulp.dest('./vendor/datatables'));
+    .pipe(gulp.dest('./src/vendor/datatables'));
   // Font Awesome
   var fontAwesome = gulp.src('./node_modules/@fortawesome/**/*')
-    .pipe(gulp.dest('./vendor'));
+    .pipe(gulp.dest('./src/vendor'));
   // jQuery Easing
   var jqueryEasing = gulp.src('./node_modules/jquery.easing/*.js')
-    .pipe(gulp.dest('./vendor/jquery-easing'));
+    .pipe(gulp.dest('./src/vendor/jquery-easing'));
   // jQuery
   var jquery = gulp.src([
       './node_modules/jquery/dist/*',
       '!./node_modules/jquery/dist/core.js'
     ])
-    .pipe(gulp.dest('./vendor/jquery'));
+    .pipe(gulp.dest('./src/vendor/jquery'));
   return merge(bootstrapJS, bootstrapSCSS, chartJS, dataTables, fontAwesome, jquery, jqueryEasing);
 }
 
 // CSS task
 function css() {
   return gulp
-    .src("./scss/**/*.scss")
+    .src("./src/scss/**/*.scss")
     .pipe(plumber())
     .pipe(sass({
       outputStyle: "expanded",
@@ -96,12 +94,12 @@ function css() {
     .pipe(header(banner, {
       pkg: pkg
     }))
-    .pipe(gulp.dest("./css"))
+    .pipe(gulp.dest("./src/css"))
     .pipe(rename({
       suffix: ".min"
     }))
     .pipe(cleanCSS())
-    .pipe(gulp.dest("./css"))
+    .pipe(gulp.dest("./src/css"))
     .pipe(browsersync.stream());
 }
 
@@ -109,8 +107,8 @@ function css() {
 function js() {
   return gulp
     .src([
-      './js/*.js',
-      '!./js/*.min.js',
+      './src/js/*.js',
+      '!./src/js/*.min.js',
     ])
     .pipe(uglify())
     .pipe(header(banner, {
@@ -119,16 +117,16 @@ function js() {
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(gulp.dest('./js'))
+    .pipe(gulp.dest('./src/js'))
     .pipe(browsersync.stream());
 }
 
 // Watch files
 function watchFiles() {
-  gulp.watch("./scss/**/*", css);
-  gulp.watch(["./js/**/*", "!./js/**/*.min.js"], js);
+  gulp.watch("./src/scss/**/*", css);
+  gulp.watch(["./src/js/**/*", "!./js/**/*.min.js"], js);
   gulp.watch("./**/*.html", browserSyncReload);
-  gulp.watch("./html/**/*.html", browserSyncReload);
+  gulp.watch("./app/**/*.html", browserSyncReload);
 }
 
 // Define complex tasks
